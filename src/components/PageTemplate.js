@@ -1,9 +1,18 @@
+import styled from "styled-components";
+
+const MainContent = styled.main`
+  width: 100%;
+`;
+const PageTitle = styled.h1`
+  font-size: 2rem;
+`;
+
 function PageTemplate({ pageName, children }) {
   return (
-    <main>
-      <h1>{pageName}</h1>
+    <MainContent>
+      <PageTitle>{pageName}</PageTitle>
       {children}
-    </main>
+    </MainContent>
   );
 }
 
