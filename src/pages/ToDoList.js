@@ -66,7 +66,7 @@ function ToDoList() {
           data-testid="new-todo-input"
           type="text"
           id="newtodo"
-          onChange={(e) => e.key === "Enter" && createTodo()}
+          onKeyUp={(e) => e.key === "Enter" && createTodo()}
         />
         <AddTodoButton
           data-testid="new-todo-add-button"
