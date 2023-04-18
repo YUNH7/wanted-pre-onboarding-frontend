@@ -19,7 +19,7 @@ function useGetData(path) {
 
   useEffect(() => {
     getData();
-  });
+  }, []);
 
   return [data, error, getData];
 }
