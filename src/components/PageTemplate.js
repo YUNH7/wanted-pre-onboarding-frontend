@@ -1,9 +1,9 @@
 function PageTemplate({ pageName, children }) {
   return (
-    <div>
+    <main>
       <h1>{pageName}</h1>
       {children}
-    </div>
+    </main>
   );
 }
 

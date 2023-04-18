@@ -3,7 +3,6 @@ import axios from "axios";
 
 function useGetData(path) {
   const [data, setData] = useState();
-  const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(false);
 
   const getData = async () => {
@@ -11,21 +10,18 @@ function useGetData(path) {
       const response = await axios.get(
         `${process.env.REACT_APP_API_URL}${path}`
       );
+      setError(false);
       setData(response.data);
-      setIsPending(false);
     } catch (err) {
       setError(err);
-      setIsPending(false);
     }
   };
 
   useEffect(() => {
-    setIsPending(true);
-    setError(false);
     getData();
-  }, [path]);
+  });
 
-  return [data, isPending, error];
+  return [data, error, getData];
 }
 
 export default useGetData;
