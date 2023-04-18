@@ -28,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
     flex-direction: column;
     align-items: center;
     min-width: 60%;
-    min-height: 50%;
+    height: 50%;
     padding: 1rem;
     background: linear-gradient(
       rgba(242, 219, 219, 0.8),

@@ -25,7 +25,7 @@ const Notification = styled.p`
   color: red;
   font-size: 0.8rem;
 `;
-const SignButton = styled.button`
+export const SignButton = styled.button`
   background: white;
   border: none;
   box-shadow: 1px 1px 3px;

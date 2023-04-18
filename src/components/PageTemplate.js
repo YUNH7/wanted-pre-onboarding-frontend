@@ -5,6 +5,8 @@ const MainContent = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-width: 50%;
+  height: inherit;
 `;
 const PageTitle = styled.h1`
   font-size: 2rem;
