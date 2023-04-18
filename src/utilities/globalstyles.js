@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 20px;
+    word-break: keep-all;
   }
 
   body {
@@ -25,15 +26,13 @@ const GlobalStyle = createGlobalStyle`
   #root {
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
-    width: 60vw;
-    min-width: fit-content;
-    height: 70vh;
+    min-width: 60%;
+    min-height: 50%;
     padding: 1rem;
     background: linear-gradient(
       rgba(242, 219, 219, 0.8),
-      rgba(194, 244, 247, 0.8)
+      rgba(194, 244, 247, 0.7)
     );
     border-radius: 10px;
   }
@@ -41,10 +40,17 @@ const GlobalStyle = createGlobalStyle`
   button {
     border-radius: 5px;
     cursor: pointer;
+    font-weight: bold;
 
     :disabled {
       cursor: not-allowed;;
     }
+  }
+
+  input[type=text], input[type=password] {
+    border: none;
+    border-radius: 5px;
+    padding: 1px 0.5rem;
   }
 `;
 

@@ -41,6 +41,7 @@ function TodoEl({ todoObj, reload }) {
         {editMode ? (
           <input
             data-testid="modify-input"
+            type="text"
             defaultValue={todo}
             onChange={(e) => setEditedTodo(e.target.value)}
           />

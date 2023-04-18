@@ -17,7 +17,6 @@ const Tab = styled(Link)`
 const TabButton = styled.button`
   border: none;
   background: none;
-  font-weight: bold;
   letter-spacing: 0.1rem;
 `;
 

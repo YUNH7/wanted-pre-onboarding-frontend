@@ -1,7 +1,10 @@
 import styled from "styled-components";
 
 const MainContent = styled.main`
-  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 const PageTitle = styled.h1`
   font-size: 2rem;

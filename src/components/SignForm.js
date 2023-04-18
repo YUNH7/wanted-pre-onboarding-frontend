@@ -3,16 +3,35 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const FormContainer = styled.form`
+  flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  padding-bottom: 2rem;
+  min-width: fit-content;
+  width: 30%;
 `;
 const InpulEl = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-bottom: 0.3rem;
+
+  label {
+    padding-right: 0.5rem;
+    font-weight: bold;
+  }
 `;
-export const Notification = styled.p`
+const Notification = styled.p`
   color: red;
   font-size: 0.8rem;
+`;
+const SignButton = styled.button`
+  background: white;
+  border: none;
+  box-shadow: 1px 1px 3px;
+  margin: 0.5rem 0;
+  padding: 0.1rem;
+  letter-spacing: 0.1rem;
 `;
 
 function SignForm({ buttonText, buttonClick }) {
@@ -50,6 +69,7 @@ function SignForm({ buttonText, buttonClick }) {
         <label htmlFor="email">이메일</label>
         <input
           data-testid="email-input"
+          type="text"
           id="email"
           onChange={changeInput("email")}
         />
@@ -75,7 +95,7 @@ function SignForm({ buttonText, buttonClick }) {
           </Notification>
         )}
       </div>
-      <button
+      <SignButton
         disabled={!Object.values(valForm).every((val) => val)}
         data-testid={
           buttonText === "로그인" ? "signin-button" : "signup-button"
@@ -84,7 +104,7 @@ function SignForm({ buttonText, buttonClick }) {
         onClick={() => buttonClick(form)}
       >
         {buttonText}
-      </button>
+      </SignButton>
     </FormContainer>
   );
 }
