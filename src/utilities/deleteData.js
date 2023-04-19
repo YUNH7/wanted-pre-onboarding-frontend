@@ -1,10 +1,9 @@
 import axios from "axios";
+import { server } from "./server";
 
 async function deleteData(path) {
   try {
-    const response = await axios.delete(
-      `${process.env.REACT_APP_API_URL}${path}`
-    );
+    const response = await axios.delete(`${server}${path}`);
     return response;
   } catch (error) {
     return error.response;

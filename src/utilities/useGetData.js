@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { server } from "./server";
 
 function useGetData(path) {
   const [data, setData] = useState();
@@ -7,9 +8,7 @@ function useGetData(path) {
 
   const getData = async () => {
     try {
-      const response = await axios.get(
-        `${process.env.REACT_APP_API_URL}${path}`
-      );
+      const response = await axios.get(`${server}${path}`);
       setError(false);
       setData(response.data);
     } catch (err) {

@@ -1,11 +1,9 @@
 import axios from "axios";
+import { server } from "./server";
 
 async function postData(path, data) {
   try {
-    const response = await axios.post(
-      `${process.env.REACT_APP_API_URL}${path}`,
-      data
-    );
+    const response = await axios.post(`${server}${path}`, data);
     return response;
   } catch (error) {
     return error.response;
