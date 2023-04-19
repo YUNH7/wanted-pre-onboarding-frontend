@@ -18,7 +18,7 @@ const AboutTodo = styled.label`
   }
 `;
 const EditInput = styled.input`
-  max-width: 100%;
+  width: 100%;
 `;
 const EditTodoButton = styled(SignButton)`
   margin: 0;
