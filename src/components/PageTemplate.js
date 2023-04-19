@@ -7,6 +7,7 @@ const MainContent = styled.main`
   align-items: center;
   min-width: 50%;
   height: inherit;
+  padding-bottom: 1.5rem;
 `;
 const PageTitle = styled.h1`
   font-size: 2rem;

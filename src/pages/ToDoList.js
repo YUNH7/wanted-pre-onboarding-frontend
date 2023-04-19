@@ -59,7 +59,7 @@ function ToDoList() {
   }, []);
 
   return (
-    <PageTemplate pageName="투두">
+    <PageTemplate pageName="투두리스트">
       <FormContainer onSubmit={(e) => e.preventDefault()}>
         <label htmlFor="newtodo" />
         <input

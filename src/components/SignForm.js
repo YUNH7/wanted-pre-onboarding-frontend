@@ -7,7 +7,6 @@ const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-bottom: 2rem;
   min-width: fit-content;
   width: 30%;
 `;
