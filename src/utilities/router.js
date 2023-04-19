@@ -8,6 +8,7 @@ import SignUp from "../pages/SignUp";
 import SignIn from "../pages/SignIn";
 import ToDoList from "../pages/ToDoList";
 import Main from "../pages/Main";
+import Error from "../pages/Error";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -16,6 +17,7 @@ export const router = createBrowserRouter(
       <Route path="signup" element={<SignUp />} />
       <Route path="signin" element={<SignIn />} />
       <Route path="todo" element={<ToDoList />} />
+      <Route path="*" element={<Error />} />
     </Route>
   ),
   { basename: process.env.PUBLIC_URL }
