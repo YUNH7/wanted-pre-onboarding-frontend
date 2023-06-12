@@ -44,18 +44,18 @@ function SignForm({ buttonText, buttonClick }) {
   });
   const navigate = useNavigate();
 
+  const setValidForm = (key, expression) => {
+    if (expression && !valForm[key]) setValForm({ ...valForm, [key]: true });
+    else if (!expression && valForm[key])
+      setValForm({ ...valForm, [key]: false });
+  };
   const changeInput = (key) => (event) => {
     const value = event.target.value;
+    const expression =
+      key === "email" ? value.includes("@") : value.length >= 8;
+
     setForm({ ...form, [key]: value });
-    if (key === "email") {
-      if (value.includes("@")) {
-        if (!valForm.email) setValForm({ ...valForm, email: true });
-      } else if (valForm.email) setValForm({ ...valForm, email: false });
-    } else {
-      if (value.length >= 8) {
-        if (!valForm.password) setValForm({ ...valForm, password: true });
-      } else if (valForm.password) setValForm({ ...valForm, password: false });
-    }
+    setValidForm(key, expression);
   };
 
   useEffect(() => {
