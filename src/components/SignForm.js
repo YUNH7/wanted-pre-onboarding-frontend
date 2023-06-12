@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import SignInput from "./SignInput";
 
 const FormContainer = styled.form`
   flex: 1;
@@ -9,16 +10,6 @@ const FormContainer = styled.form`
   justify-content: center;
   min-width: fit-content;
   width: 30%;
-`;
-const InpulEl = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 0.3rem;
-
-  label {
-    padding-right: 0.5rem;
-    font-weight: bold;
-  }
 `;
 const Notification = styled.p`
   color: red;
@@ -64,24 +55,18 @@ function SignForm({ buttonText, buttonClick }) {
 
   return (
     <FormContainer>
-      <InpulEl>
-        <label htmlFor="email">이메일</label>
-        <input
-          data-testid="email-input"
-          type="text"
-          id="email"
-          onChange={changeInput("email")}
-        />
-      </InpulEl>
-      <InpulEl>
-        <label htmlFor="password">비밀번호</label>
-        <input
-          data-testid="password-input"
-          id="password"
-          type="password"
-          onChange={changeInput("password")}
-        />
-      </InpulEl>
+      <SignInput
+        type="text"
+        id="email"
+        name="이메일"
+        setInput={changeInput("email")}
+      />
+      <SignInput
+        type="password"
+        id="password"
+        name="비밀번호"
+        setInput={changeInput("password")}
+      />
       <div>
         {form.email && !valForm.email && (
           <Notification>
