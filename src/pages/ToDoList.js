@@ -4,7 +4,7 @@ import styled from "styled-components";
 import TodoEl from "../components/TodoEl";
 import PageTemplate from "../components/PageTemplate";
 import { SignButton } from "../components/SignForm";
-import { P } from "./Main";
+import { Info } from "./Main";
 import useGetData from "../utilities/useGetData";
 import postData from "../utilities/postData";
 
@@ -24,7 +24,7 @@ const AddTodoButton = styled(SignButton)`
   padding: 0.1rem 0.3rem;
   margin-left: 0.3rem;
 `;
-export const ErrorMessage = styled(P)`
+export const ErrorMessage = styled(Info)`
   color: red;
   font-size: 1.5rem;
 `;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import PageTemplate from "../components/PageTemplate";
 
-export const P = styled.h2`
+export const Info = styled.h2`
   height: 100%;
   display: flex;
   align-items: center;
@@ -12,7 +12,7 @@ export const P = styled.h2`
 function Main() {
   return (
     <PageTemplate pageName="투두">
-      <P>상단 탭을 눌러주세요</P>
+      <Info>상단 탭을 눌러주세요</Info>
     </PageTemplate>
   );
 }
