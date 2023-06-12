@@ -17,8 +17,11 @@ function useGetData(path) {
   };
 
   useEffect(() => {
-    getData();
-  }, []);
+    if (path) {
+      setError(false);
+      getData();
+    }
+  }, [path]);
 
   return [data, error, getData];
 }
