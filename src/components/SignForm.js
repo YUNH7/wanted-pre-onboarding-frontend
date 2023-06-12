@@ -19,7 +19,6 @@ const InputBox = styled.div`
 const Notification = styled.p`
   visibility: ${(props) => (props.visible ? "block" : "hidden")};
   color: red;
-  font-size: 0.8rem;
 `;
 export const SignButton = styled.button`
   background: white;
