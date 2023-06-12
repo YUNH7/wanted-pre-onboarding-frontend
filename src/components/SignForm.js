@@ -17,6 +17,7 @@ const InputBox = styled.div`
   gap: 0.3rem;
 `;
 const Notification = styled.p`
+  visibility: ${(props) => (props.visible ? "block" : "hidden")};
   color: red;
   font-size: 0.8rem;
 `;
@@ -74,18 +75,6 @@ function SignForm({ buttonText, buttonClick }) {
           setInput={changeInput("password")}
         />
       </InputBox>
-      <div>
-        {form.email && !valForm.email && (
-          <Notification>
-            이메일은 <strong>@</strong>가 포함되어야 합니다.
-          </Notification>
-        )}
-        {form.password && !valForm.password && (
-          <Notification>
-            비밀번호는 <strong>8자</strong> 이상이어야 합니다.
-          </Notification>
-        )}
-      </div>
       <SignButton
         disabled={!Object.values(valForm).every((val) => val)}
         data-testid={
@@ -96,6 +85,12 @@ function SignForm({ buttonText, buttonClick }) {
       >
         {buttonText}
       </SignButton>
+      <Notification visible={form.email && !valForm.email}>
+        이메일은 <strong>@</strong>가 포함되어야 합니다.
+      </Notification>
+      <Notification visible={form.password && !valForm.password}>
+        비밀번호는 <strong>8자</strong> 이상이어야 합니다.
+      </Notification>
     </FormContainer>
   );
 }
