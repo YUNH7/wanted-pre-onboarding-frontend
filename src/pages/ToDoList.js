@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import TodoEl from "../components/TodoEl";
 import PageTemplate from "../components/PageTemplate";
+import BasicInput from "../components/BasicInput";
 import { SignButton } from "../components/SignForm";
 import { Info } from "./Main";
 import useGetData from "../utilities/useGetData";
@@ -30,7 +31,8 @@ export const ErrorMessage = styled(Info)`
 `;
 const TodoBox = styled.ul`
   list-style: none;
-  width: 100%;
+  width: calc(100% + 5px);
+  padding: 0 5px;
   overflow: auto;
 
   ::-webkit-scrollbar {
@@ -46,13 +48,12 @@ function ToDoList() {
   const [data, error, getData] = useGetData("/todos");
   const navigate = useNavigate();
 
-  const createTodo = () => {
-    const todoInput = document.querySelector("#newtodo");
-    const todo = todoInput.value;
+  const createTodo = (event) => {
+    const todo = event.target.value;
     if (todo)
       postData("/todos", { todo })
         .then(() => getData())
-        .then(() => (todoInput.value = ""));
+        .then(() => (event.target.value = ""));
   };
 
   useEffect(() => {
@@ -62,12 +63,11 @@ function ToDoList() {
   return (
     <PageTemplate pageName="투두리스트">
       <FormContainer onSubmit={(e) => e.preventDefault()}>
-        <label htmlFor="newtodo" />
-        <input
-          data-testid="new-todo-input"
+        <BasicInput
           type="text"
-          id="newtodo"
-          onKeyUp={(e) => e.key === "Enter" && createTodo()}
+          id="new-todo"
+          name=""
+          setInput={(e) => e.key === "Enter" && createTodo(e)}
         />
         <AddTodoButton
           data-testid="new-todo-add-button"
@@ -78,7 +78,7 @@ function ToDoList() {
         </AddTodoButton>
       </FormContainer>
       {error ? (
-        <ErrorMessage>요청 실패</ErrorMessage>
+        <ErrorMessage>요청 실패. 로그아웃 후 다시 로그인 해주세요</ErrorMessage>
       ) : (
         <TodoBox>
           {data?.map((todo) => (
