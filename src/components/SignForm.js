@@ -55,18 +55,20 @@ function SignForm({ buttonText, buttonClick }) {
 
   return (
     <FormContainer>
-      <SignInput
-        type="text"
-        id="email"
-        name="이메일"
-        setInput={changeInput("email")}
-      />
-      <SignInput
-        type="password"
-        id="password"
-        name="비밀번호"
-        setInput={changeInput("password")}
-      />
+      <div>
+        <SignInput
+          type="text"
+          id="email"
+          name="이메일"
+          setInput={changeInput("email")}
+        />
+        <SignInput
+          type="password"
+          id="password"
+          name="비밀번호"
+          setInput={changeInput("password")}
+        />
+      </div>
       <div>
         {form.email && !valForm.email && (
           <Notification>
