@@ -12,7 +12,7 @@ function SignIn() {
         localStorage.setItem("access_token", res.data.access_token);
         navigate("/todo");
       } else if (res.status === 401) alert("이메일/비밀번호를 확인해주세요");
-      else alert("서버 확인 필요");
+      else alert(res.data.message);
     });
   };
 
