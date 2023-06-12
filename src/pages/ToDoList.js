@@ -48,12 +48,13 @@ function ToDoList() {
   const [data, error, getData] = useGetData("/todos");
   const navigate = useNavigate();
 
-  const createTodo = (event) => {
-    const todo = event.target.value;
+  const createTodo = () => {
+    const todoInput = document.querySelector("#new-todo");
+    const todo = todoInput.value;
     if (todo)
       postData("/todos", { todo })
         .then(() => getData())
-        .then(() => (event.target.value = ""));
+        .then(() => (todoInput.value = ""));
   };
 
   useEffect(() => {
@@ -67,7 +68,7 @@ function ToDoList() {
           type="text"
           id="new-todo"
           name=""
-          setInput={(e) => e.key === "Enter" && createTodo(e)}
+          setInput={(e) => e.key === "Enter" && createTodo()}
         />
         <AddTodoButton
           data-testid="new-todo-add-button"
