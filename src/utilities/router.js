@@ -19,6 +19,5 @@ export const router = createBrowserRouter(
       <Route path="todo" element={<ToDoList />} />
       <Route path="*" element={<Error />} />
     </Route>
-  ),
-  { basename: process.env.PUBLIC_URL }
+  )
 );
