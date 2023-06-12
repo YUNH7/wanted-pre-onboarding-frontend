@@ -1,10 +1,10 @@
 import PageTemplate from "../components/PageTemplate";
-import { P } from "./Main";
+import { ErrorMessage } from "./ToDoList";
 
 function Error() {
   return (
     <PageTemplate pageName="404">
-      <P>잘못된 접근입니다</P>
+      <ErrorMessage>잘못된 접근입니다</ErrorMessage>
     </PageTemplate>
   );
 }
