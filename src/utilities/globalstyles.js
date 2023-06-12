@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'NanumJangMiCe';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 20px;
+    font-size: 24px;
     word-break: keep-all;
   }
 
@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
     min-width: 360px;
     height: 100vh;
     background: no-repeat center/cover
-      url("https://images.unsplash.com/photo-1531256379416-9f000e90aacc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80");
+      url("https://images.unsplash.com/photo-1516564927920-18dc97b117b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80");
   }
 
   #root {
@@ -30,10 +30,7 @@ const GlobalStyle = createGlobalStyle`
     min-width: 60%;
     height: 50%;
     padding: 1rem;
-    background: linear-gradient(
-      rgba(242, 219, 219, 0.8),
-      rgba(194, 244, 247, 0.7)
-    );
+    background-color: rgba(192,168,152,0.5);
     border-radius: 10px;
   }
 
